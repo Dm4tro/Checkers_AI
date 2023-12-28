@@ -1,26 +1,25 @@
 #pragma once
 
-#include "Cell.h"
 
-class Checker : public Cell
+class Checker
 {
 public:
-	Checker () {}
+	Checker():symbol {0}{ }
 
-	Checker(int posX, int posY,int sym) : x{ posX }, y{ posY }, symbol{sym} {
-
+	Checker(int posX, int posY, const int sym) : x{ posX }, y{ posY }, symbol{sym} {
+		
 		
 	}
 
-	Checker(int symb): symbol{ symb } {
+	Checker(const int symb): symbol{ symb } {
 
 	}
 
-	void changeX(int newX) {
+	void setX(int newX) {
 		x = newX;
 	}
 
-	void changeY(int newY) {
+	void setY(int newY) {
 		y = newY;
 	}
 
@@ -31,17 +30,15 @@ public:
 	int getX() {
 		return x;
 	}
-	int getSymbol() {
+	const int getSymbol() {
 		return symbol;
 	}
-	void setSymbol(int newS) {
-		symbol = newS;
-	}
+	
 
 	
 
 private:
-	int symbol;
+	const int symbol;
 	int x, y;
 	 //white or black
 };

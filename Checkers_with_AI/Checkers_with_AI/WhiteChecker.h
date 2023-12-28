@@ -2,9 +2,11 @@
 #include "Checker.h"
 class WhiteChecker : public Checker
 {
-	WhiteChecker() :Checker(1) {
+public:
+	WhiteChecker() :Checker(value) {
 		 
 	}
-	
+private:
+	const int value = 1;
 };
 

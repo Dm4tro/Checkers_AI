@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -137,7 +138,9 @@
     <ClInclude Include="BlackChecker.h" />
     <ClInclude Include="Cell.h" />
     <ClInclude Include="Checker.h" />
+    <ClInclude Include="Coordinate.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Move.h" />
     <ClInclude Include="NoChecker.h" />
     <ClInclude Include="Table.h" />
     <ClInclude Include="WhiteChecker.h" />

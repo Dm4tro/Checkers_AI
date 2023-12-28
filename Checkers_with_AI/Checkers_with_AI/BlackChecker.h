@@ -2,9 +2,12 @@
 #include "Checker.h"
 class BlackChecker: public Checker
 {
-	BlackChecker():Checker(2) {
+public:
+
+	BlackChecker():Checker(value) {
 		 
 	}
-
+private:
+	const int value= 2;
 
 };
