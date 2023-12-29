@@ -2,6 +2,9 @@
 #include <iostream> 
 #include <ostream>
 #include <istream>
+
+#include <stdlib.h>
+#include <stdio.h>
 using namespace std;
 
 class Coordinate
@@ -21,19 +24,49 @@ public:
 		this->x = rhs.getX();
 	}
 
-	friend istream& operator>>(istream& cin, Coordinate& c)
+	friend istream& operator>>(istream& in, Coordinate& cl)
 	{
 		
-		cin >> c.x;
-		cout << ":";
-		cin>>c.y;
 
-		return cin;
+	
+		char c;
+		int i = 0;
+		cl.x = 0;
+		while ((c = in.get()) != ':') {
+			if (c >= '0' && c <= '9') {
+				int digit = c - '0';
+				cl.x = cl.x * 10 + digit;
+				i++;
+			}
+			else if (i > 0) {
+				// Convert the characters into an integer
+				break;
+			}
+		}
+
+		char d;
+		int a = 0;
+		cl.y = 0;
+		while ( iswalnum((d = in.peek()))) {
+			d = in.get();
+			if (d >= '0' && d <= '9') {
+				int digit = d - '0';
+				cl.y = cl.y * 10 + digit;
+				i++;
+			}
+			else if (i > 0) {
+				// Convert the characters into an integer
+				break;
+			}
+		}
+
+		
+		return in;
 	}
 
 	friend ostream& operator<<(ostream&, Coordinate& c)
 	{
-		cout  << c.x << ":" << c.y<<endl;
+		cout  << c.x << ":" << c.y;
 		return cout;
 	}
 

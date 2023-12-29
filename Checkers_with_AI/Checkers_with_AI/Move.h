@@ -12,14 +12,18 @@ public:
 
 	}
 	//  2:3>5:7
-	friend istream& operator>>(istream& cin, Move& c)
+	friend istream& operator>>(istream& in, Move& c)
 	{
-		cout << "1 Input ";
-			cin >> c.From ;
-			cout << "2 Input ";
-			cin >> c.To;
+		//cout << "1 Input ";
+			in >> c.From ;
+			
+			char arrow = in.get();
+			
+			if (arrow == '<') in >> c.To;
+			//cout << "2 Input ";
+			else cout << " ERROR";
 
-		return cin;
+		return in;
 	}
 
 	friend ostream& operator<<(ostream&, Move& c)

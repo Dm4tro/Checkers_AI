@@ -2,12 +2,16 @@
 //
 
 #include <iostream>
+#include "Move.h"
 
 using namespace std;
 
 int main()
 {
     std::cout << "Hello World!\n";
+    Move move;
+    cin >> move;
+    cout << move;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
