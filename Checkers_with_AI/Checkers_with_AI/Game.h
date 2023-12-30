@@ -1,4 +1,7 @@
 #pragma once
+#include <iostream>
+#include "Move.h"
+#include "Table.h"
 class Game
 {
 public:
@@ -6,16 +9,23 @@ public:
 
 	void run() {
 		table.initializeGame();
+		table.showTable();
 
-		tabel.turnForWhite();
-		readMove();
-		tabble.doMove();
-		table.turnForBlack();
+		
+		readMoveForWhite();
+		tabble.inspectAndDoMoveWhite();
 
+		readMoveForBlack();
+		tabble.inspectAndDoMoveBlack();
+
+	}
+	void readMoveForWhite() {
+		cin >> move;
 	}
 
 public:
 	Table table;
+	Move move;
 
 };
 

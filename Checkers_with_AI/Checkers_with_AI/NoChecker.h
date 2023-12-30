@@ -5,9 +5,8 @@ class NoChecker: public Checker
 public:
 
 
-	NoChecker() :Checker(0) {
-		
-
+	NoChecker() :Checker(symbol) {
+	
 	}
-
+	static inline const int symbol=0;
 };

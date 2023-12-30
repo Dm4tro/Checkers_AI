@@ -14,6 +14,7 @@ public:
 	//  2:3>5:7
 	friend istream& operator>>(istream& in, Move& c)
 	{
+		cout << "Input";
 		//cout << "1 Input ";
 			in >> c.From ;
 			
@@ -37,7 +38,5 @@ public:
 private:
 	Coordinate From;
 	Coordinate To;
-
-
 };
 

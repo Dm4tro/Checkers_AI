@@ -4,14 +4,14 @@
 class Checker
 {
 public:
-	Checker():symbol {0}{ }
+	Checker():symbol{ (const int)0 } { }
 
-	Checker(int posX, int posY, const int sym) : x{ posX }, y{ posY }, symbol{sym} {
+	Checker(int posX, int posY, const int _symbol) : x{ posX }, y{ posY }, symbol{ _symbol } {
 		
 		
 	}
 
-	Checker(const int symb): symbol{ symb } {
+	Checker(const int _symbol): symbol{ _symbol } {
 
 	}
 
@@ -38,7 +38,7 @@ public:
 	
 
 private:
-	const int symbol;
+	 const int symbol;
 	int x, y;
 	 //white or black
 };

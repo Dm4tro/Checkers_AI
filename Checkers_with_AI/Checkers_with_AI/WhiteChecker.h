@@ -7,6 +7,6 @@ public:
 		 
 	}
 private:
-	const int value = 1;
+	static inline const int value = 1;
 };
 

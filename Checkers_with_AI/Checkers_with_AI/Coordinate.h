@@ -27,7 +27,7 @@ public:
 	friend istream& operator>>(istream& in, Coordinate& cl)
 	{
 		
-
+		
 	
 		char c;
 		int i = 0;
