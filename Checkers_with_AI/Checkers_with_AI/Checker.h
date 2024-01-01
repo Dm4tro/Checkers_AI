@@ -4,15 +4,23 @@
 class Checker
 {
 public:
-	Checker():symbol{ (const int)0 } { }
+	Checker():symbol{ ( int)0 } { }
 
-	Checker(int posX, int posY, const int _symbol) : x{ posX }, y{ posY }, symbol{ _symbol } {
+	Checker(int posX, int posY,  int _symbol) : x{ posX }, y{ posY }, symbol{ _symbol } {
 		
 		
 	}
 
-	Checker(const int _symbol): symbol{ _symbol } {
+	Checker( int _symbol): symbol{ _symbol } {
 
+	}
+
+	Checker& operator=( const Checker& other) {
+		this->symbol = other.symbol;
+		this->x = other.x;
+		this->y = other.y;
+
+		return *this;
 	}
 
 	void setX(int newX) {
@@ -30,15 +38,30 @@ public:
 	int getX() {
 		return x;
 	}
-	const int getSymbol() {
+	 int getSymbol() {
 		return symbol;
 	}
+
+	 void setSymbol(int _symbol) {
+		 this->symbol = _symbol;
+	 }
+
+	 bool isEmpty() {
+		 return symbol == 0;
+	 }
+
+	 bool isWhite() {
+		 return symbol == 1;
+	 }
 	
+	 bool isBlack() {
+		 return symbol == 2;
+	 }
 
 	
 
 private:
-	 const int symbol;
+	  int symbol;
 	int x, y;
 	 //white or black
 };

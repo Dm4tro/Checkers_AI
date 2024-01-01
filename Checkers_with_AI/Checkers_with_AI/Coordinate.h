@@ -99,6 +99,7 @@ public:
 	void setY(int _Y) {
 		y = _Y;
 	}
+
 private:
 	int y, x;
 };

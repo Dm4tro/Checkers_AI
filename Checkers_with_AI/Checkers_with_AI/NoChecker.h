@@ -8,5 +8,5 @@ public:
 	NoChecker() :Checker(symbol) {
 	
 	}
-	static inline const int symbol=0;
+	static inline int symbol=0;
 };

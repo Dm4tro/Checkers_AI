@@ -3,15 +3,18 @@
 
 #include <iostream>
 #include "Move.h"
+#include "Table.h"
 
 using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
-    Move move;
-    cin >> move;
-    cout << move;
+    
+    
+
+    Table table1;
+    table1.initializeGame();
+    table1.showTable();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

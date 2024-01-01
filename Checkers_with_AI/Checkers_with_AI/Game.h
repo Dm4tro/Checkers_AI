@@ -1,31 +1,37 @@
 #pragma once
 #include <iostream>
-#include "Move.h"
+
 #include "Table.h"
-class Game
-{
+
+
+using namespace std;
+
+class Game {
 public:
-	Game(){}
+    Game() {}
 
-	void run() {
-		table.initializeGame();
-		table.showTable();
-
-		
-		readMoveForWhite();
-		tabble.inspectAndDoMoveWhite();
-
-		readMoveForBlack();
-		tabble.inspectAndDoMoveBlack();
-
-	}
-	void readMoveForWhite() {
-		cin >> move;
-	}
-
-public:
-	Table table;
-	Move move;
-
+//    void run() {
+//        GameTable.initializeGame();
+//        GameTable.showTable();
+//
+//        readMoveForWhite();
+//        // Uncomment the lines below once the functions are defined
+//        GameTable.inspectAndDoMoveWhite(move.getFrom(), move.getTo());
+//
+//        // readMoveForBlack();
+//        // table.inspectAndDoMoveBlack();
+//    }
+//
+//    void readMoveForWhite() {
+//        cin >> move;
+//    }
+//
+//    void readMoveForBlack() {
+//        cin >> move;
+//    }
+//
+//private:
+//     Table GameTable;
+    
+    Move move;
 };
-

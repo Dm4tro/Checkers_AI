@@ -8,6 +8,6 @@ public:
 		 
 	}
 private:
-	static inline const int value= 2;
+	static inline int value= 2;
 
 };
