@@ -12,10 +12,13 @@ int main()
     
     
 
-    Table table1;
+    ChekerTable table1;
     table1.initializeGame();
     table1.showTable();
 }
+//To Do: add rules 
+//symbol to color in checker
+//
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu

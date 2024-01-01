@@ -134,16 +134,21 @@
     <ClCompile Include="Cell.cpp" />
     <ClCompile Include="Checkers_with_AI.cpp" />
     <ClCompile Include="NoChecker.cpp" />
+    <ClCompile Include="RuleSet.cpp" />
     <ClCompile Include="WhiteChecker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BlackChecker.h" />
     <ClInclude Include="Cell.h" />
     <ClInclude Include="Checker.h" />
+    <ClInclude Include="ContantSet.h" />
     <ClInclude Include="Coordinate.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="NoChecker.h" />
+    <ClInclude Include="Rule.h" />
+    <ClInclude Include="CompositeRule.h" />
+    <ClInclude Include="SimpleMoveToEmptyRule.h" />
     <ClInclude Include="Table.h" />
     <ClInclude Include="WhiteChecker.h" />
   </ItemGroup>

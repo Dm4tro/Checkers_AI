@@ -2,13 +2,16 @@
 #include <iostream>
 
 #include "Table.h"
+#include "Move.h"
 
-
-using namespace std;
 
 class Game {
+    ChekerTable checkerTable;
+    Move move;
+    
 public:
-    Game() {}
+    Game() {
+    }
 
 //    void run() {
 //        GameTable.initializeGame();
@@ -29,9 +32,4 @@ public:
 //    void readMoveForBlack() {
 //        cin >> move;
 //    }
-//
-//private:
-//     Table GameTable;
-    
-    Move move;
 };
