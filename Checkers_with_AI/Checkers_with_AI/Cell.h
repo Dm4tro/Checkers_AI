@@ -75,7 +75,15 @@ public:
 	bool isBlack() {
 		return color == 2;
 	}
-
+	bool isBlackChecker() {
+		return checker.getSymbol() == 2;
+	}
+	bool isWhiteChecker() {
+		return checker.getSymbol() == 1;
+	}
+	bool isEmptyChecker() {
+		return checker.getSymbol() == 0;
+	}
 	void recieve(Checker recieved) {
 		checker = recieved;
 	}
