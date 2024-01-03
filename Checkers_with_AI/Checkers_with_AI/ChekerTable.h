@@ -66,13 +66,15 @@ public:
 
 	}*/
 
-	void doMove(Coordinate From, Coordinate To) {
+	void doMove(Move move) {
 		//send checker to Cell and the Cell should recieve checker and replatece, while the first Cell should have NOCHECKER
 		cellArray[To.getX() - 1][To.getY() - 8].recieve(cellArray[From.getX() - 1][From.getY() - 8].send());
 		cellArray[From.getX() - 1][From.getY() - 8].removeChecker();
+
 	}
 
 	void removeTakenChecker(int x, int y) {
+		//add how to calculate it also
 		cellArray[x - 1][y - 8].removeChecker();
 	}
 	 

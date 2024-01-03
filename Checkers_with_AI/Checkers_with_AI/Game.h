@@ -1,21 +1,19 @@
 #pragma once
 #include <iostream>
 
-
+#include "TurnController.h"
 #include "CompositeRule.h"
 
 
 
 
 class Game {
-    Cheker
-        
-        
-        checkerTable;
-    Move move;
-    CompositeRule compositeRule;
 
+    ChekerTable checkerTable;
     
+    CompositeRule compositeRule;
+    TurnController turnController;
+
 public:
     Game() {
     }
@@ -24,8 +22,21 @@ public:
         checkerTable.initializeGame();
         checkerTable.showTable();
 
-        readMoveForWhite();
-        compositeRule.validate(move, checkerTable);
+        while (true)
+        {
+            turnController.setTurnWhite();
+            //readMove();
+            Move move = Move(turnController.getCurrentTurnCheckerColor());
+            cin >> move;
+            
+
+            compositeRule.validate(move, checkerTable);
+            checkerTable.doMove(move);
+
+
+            turnController.setTurnBlack();
+        }
+       
         // Uncomment the lines below once the functions are defined
         /*checkerTable.inspectAndDoMoveWhite(move.getFrom(), move.getTo());*/
         //& peredavaty po & // turnController 
@@ -37,11 +48,12 @@ public:
         // table.inspectAndDoMoveBlack();
     }
 
-    void readMoveForWhite() {
+    /*void readMove() {
+        Move move;
         cin >> move;
-    }
+       
+    }*/
 
-    void readMoveForBlack() {
-        cin >> move;
-    }
+   
+    
 };

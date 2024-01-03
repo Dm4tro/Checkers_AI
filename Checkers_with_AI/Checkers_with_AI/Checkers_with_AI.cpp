@@ -21,6 +21,8 @@ int main()
     cout << endl;
     move.coutFront();
 }
+//FIX 4 parameter input in take rules
+
 //fix only forward
 //To Do: add rules 
 //symbol to color in checker

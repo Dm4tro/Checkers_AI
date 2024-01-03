@@ -9,7 +9,7 @@ class Move
 {
 public:
 
-	Move()  { //:From(),To()
+	Move(unsigned short _checkerColor) : checkerColor{ _checkerColor } { //:From(),To()
 		
 	}
 	~ Move() { //:From(),To()
@@ -69,11 +69,14 @@ public:
 	const list<Coordinate>& getPath() const {
 		return path;
 	}
-
+	unsigned short getCheckerColor() {
+		return checkerColor;
+	}
 
 private:
 	list <Coordinate> path;
 	Coordinate temporaray;
+	unsigned short checkerColor;
 
 };
 
