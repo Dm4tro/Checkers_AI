@@ -4,6 +4,7 @@
 #include "BlackChecker.h"
 #include "WhiteChecker.h"
 #include "NoChecker.h"
+#include "ContantSet.h"
 
 
 
@@ -26,14 +27,14 @@ public:
 
 	//}
 
-	Cell(int Ypos, int Xpos, int symbol, int _color) 
+	Cell(int Ypos, int Xpos, unsigned short symbol, unsigned short _color)
 		:y{ Ypos }, x{ Xpos }, checker{ symbol }, color{_color} {
 		
 	}
 
 
-	Cell(int Ypos, int Xpos, int _color) 
-		:y{ Ypos }, x{ Xpos }, color{ _color }, checker{0} {
+	Cell(int Ypos, int Xpos, unsigned short _color)
+		:y{ Ypos }, x{ Xpos }, color{ _color }, checker{(unsigned short)0} {
 
 	}
 	Cell& operator=(const Cell& other) {
@@ -45,16 +46,16 @@ public:
 		}
 		return *this;
 	}
-	void setColor(int _color) {
+	void setColor(unsigned short _color) {
 		this->color = _color;
 	}
-	void setSymbol(int _symbol) {
+	void setSymbol(unsigned short _symbol) {
 		this->checker.setSymbol(_symbol);
 	}
-	int getSymbol() {
+	unsigned short getSymbol() {
 		return this->checker.getSymbol();
 	}
-	int getColor() {
+	unsigned short getColor() {
 		return this->color;
 	}
 	int getX() {
@@ -70,18 +71,35 @@ public:
 		checker.setY(_y);
 	}
 	bool isWhite() {
-		return color == 1;
+		return color == ConstantSet::COLOR_WHITE;
+	}
+	bool isWhite() const {
+		return color == ConstantSet::COLOR_WHITE;
 	}
 	bool isBlack() {
-		return color == 2;
+		return color == ConstantSet::COLOR_BLACK;
+	}
+	bool isBlack() const{
+		return color == ConstantSet::COLOR_BLACK;
 	}
 	bool isBlackChecker() {
-		return checker.getSymbol() == 2;
+		return checker.getSymbol() == ConstantSet::COLOR_BLACK;
 	}
 	bool isWhiteChecker() {
-		return checker.getSymbol() == 1;
+		return checker.getSymbol() == ConstantSet::COLOR_WHITE;
 	}
+	bool isBlackChecker()const {
+		return checker.getSymbol() == ConstantSet::COLOR_BLACK;
+	}
+	bool isWhiteChecker()const {
+		return checker.getSymbol() == ConstantSet::COLOR_WHITE;
+	}
+
 	bool isEmptyChecker() {
+		return checker.getSymbol() == 0;
+	}
+
+	bool isEmptyChecker()const {
 		return checker.getSymbol() == 0;
 	}
 	void recieve(Checker recieved) {
@@ -99,7 +117,7 @@ public:
 private:
 	
 	Checker checker;
-	int color;
+	unsigned short color;
 	
 	int x;
 	int y;

@@ -19,14 +19,13 @@ public:
 		y = 0;
 		x = 0;
 	}
-	Coordinate(Coordinate& rhs) {
-		this->y = rhs.getY();
-		this->x = rhs.getX();
+	Coordinate(const Coordinate& rhs) {
+		this->y = rhs.y;
+		this->x = rhs.x;
 	}
 
 	friend istream& operator>>(istream& in, Coordinate& cl)
 	{
-		
 		
 	
 		char c;
@@ -89,6 +88,17 @@ public:
 
 	int getY() {
 		return y;
+	}
+
+
+	int getY()const {
+		return y;
+	}
+
+	int getX()const {
+
+		return x;
+
 	}
 
 	void setX(int _X) {

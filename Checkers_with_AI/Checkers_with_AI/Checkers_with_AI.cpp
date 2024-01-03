@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "Move.h"
-#include "Table.h"
+#include "ChekerTable.h"
 
 using namespace std;
 
@@ -15,7 +15,13 @@ int main()
     ChekerTable table1;
     table1.initializeGame();
     table1.showTable();
+    cout << endl;
+    Move move;
+    cin >> move;
+    cout << endl;
+    move.coutFront();
 }
+//fix only forward
 //To Do: add rules 
 //symbol to color in checker
 //

@@ -1,22 +1,22 @@
 #pragma once
 
+#include "ContantSet.h"
 
 class Checker
 {
 public:
-	Checker():symbol{ ( int)0 } { }
+	Checker():color{ (unsigned short)0 } { }
 
-	Checker(int posX, int posY,  int _symbol) : x{ posX }, y{ posY }, symbol{ _symbol } {
-		
+	Checker(int posX, int posY, unsigned short _symbol) : x{ posX }, y{ posY }, color{ _symbol } {
 		
 	}
 
-	Checker( int _symbol): symbol{ _symbol } {
+	Checker(unsigned short _symbol): color{ _symbol } {
 
 	}
 
 	Checker& operator=( const Checker& other) {
-		this->symbol = other.symbol;
+		this->color = other.color;
 		this->x = other.x;
 		this->y = other.y;
 
@@ -39,30 +39,33 @@ public:
 		return x;
 	}
 	 int getSymbol() {
-		return symbol;
+		return color;
 	}
-
-	 void setSymbol(int _symbol) {
-		 this->symbol = _symbol;
+	 int getSymbol() const {
+		 return color;
+	 }
+	 void setSymbol(unsigned short _symbol) {
+		 this->color = _symbol;
 	 }
 
 	 bool isEmpty() {
-		 return symbol == 0;
+		 return color == 0;
 	 }
 
 	 bool isWhite() {
-		 return symbol == 1;
+		 return color == ConstantSet::COLOR_WHITE;
 	 }
 	
 	 bool isBlack() {
-		 return symbol == 2;
+		 return color == ConstantSet::COLOR_BLACK;
 	 }
 
 	
 
 private:
-	  int symbol;
+	  unsigned short color;
 	int x, y;
+	
 	 //white or black
 };
 
