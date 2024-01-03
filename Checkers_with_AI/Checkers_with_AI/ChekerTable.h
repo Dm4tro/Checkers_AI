@@ -151,11 +151,11 @@ public:
 				}
 				else if (cellArray[i][j].getSymbol() == ConstantSet::COLOR_WHITE)
 				{
-					cout << "1 ";
+					cout << "+ ";
 				}
 				else  if (cellArray[i][j].getSymbol() == ConstantSet::COLOR_BLACK)
 				{
-					cout << "2 ";
+					cout << "- ";
 				}
 				
 			}

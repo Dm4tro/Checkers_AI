@@ -94,16 +94,19 @@ public:
 		}
 	}
 
-	unsigned short theOppositeCheckerColor  (const Move& move, const ChekerTable& table) const {
+	
+
+private:
+
+	unsigned short theOppositeCheckerColor(const Move& move, const ChekerTable& table) const {
 		list <Coordinate> temp2 = move.getPath();
 		const Cell temp1 = table.getACell(temp2.front().getY() - 8, temp2.front().getX() - 1);
 
 		if (temp1.isWhite()) return ConstantSet::COLOR_BLACK;
 		else return ConstantSet::COLOR_WHITE;
-		
+
 	}
 
-private:
 	TakeBottomRightCheckerRule takeBottomRightCheckerRule;
 	TakeTopLeftCheckerRule takeTopLeftCheckerRule;
 	TakeBottomLeftCheckerRule takeBottomLeftCheckerRule;
