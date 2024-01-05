@@ -4,7 +4,7 @@
 #include "BlackChecker.h"
 #include "WhiteChecker.h"
 #include "NoChecker.h"
-#include "ContantSet.h"
+#include "ConstantSet.h"
 
 
 
@@ -70,6 +70,12 @@ public:
 	void setY(int _y) {
 		checker.setY(_y);
 	}
+	void setToWhiteKing() {
+		checker.setToWhiteKing();
+	}
+	void setToBlackKing() {
+		checker.setToBlackKing();
+	}
 	bool isWhite() {
 		return color == ConstantSet::COLOR_WHITE;
 	}
@@ -88,13 +94,28 @@ public:
 	bool isWhiteChecker() {
 		return checker.getSymbol() == ConstantSet::COLOR_WHITE;
 	}
+	bool isWhiteKing() {
+		return checker.getSymbol() == ConstantSet::COLOR_WHITE_KING;
+	}
+	bool isBlackKing() {
+		return checker.getSymbol() == ConstantSet::COLOR_BLACK_KING;
+	}
+
+	bool isWhiteKing()const {
+		return checker.getSymbol() == ConstantSet::COLOR_WHITE_KING;
+	}
+	bool isBlackKing()const {
+		return checker.getSymbol() == ConstantSet::COLOR_BLACK_KING;
+	}
 	bool isBlackChecker()const {
 		return checker.getSymbol() == ConstantSet::COLOR_BLACK;
 	}
 	bool isWhiteChecker()const {
 		return checker.getSymbol() == ConstantSet::COLOR_WHITE;
 	}
-
+	bool isKing() {
+		return checker.isKing();
+	}
 	bool isEmptyChecker() {
 		return checker.getSymbol() == 0;
 	}

@@ -40,6 +40,10 @@ public:
            
             if (checkerTable.isWhiteAWinner()) break;
 
+
+
+
+
             turnController.setTurnBlack();
             Move moveBlack = Move(turnController.getCurrentTurnCheckerColor());
             cout << "Black ";
@@ -54,7 +58,8 @@ public:
             checkerTable.showTable();
            
             if (checkerTable.isBlackAWinner()) break;
-            
+            //damku
+            //move damka+ rules
         }
        
         // Uncomment the lines below once the functions are defined

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ContantSet.h"
+#include "ConstantSet.h"
 
 class Checker
 {
@@ -40,12 +40,20 @@ public:
 	}
 	 int getSymbol() {
 		return color;
-	}
+	 }
+
 	 int getSymbol() const {
 		 return color;
 	 }
 	 void setSymbol(unsigned short _symbol) {
 		 this->color = _symbol;
+	 }
+	 void setToWhiteKing() {
+		 this->color = ConstantSet::COLOR_WHITE_KING;
+	 }
+
+	 void setToBlackKing() {
+		 this->color = ConstantSet::COLOR_BLACK_KING;
 	 }
 
 	 bool isEmpty() {
@@ -59,7 +67,9 @@ public:
 	 bool isBlack() {
 		 return color == ConstantSet::COLOR_BLACK;
 	 }
-
+	 bool isKing() {
+		 return this->color == ConstantSet::COLOR_BLACK_KING || this->color == ConstantSet::COLOR_WHITE_KING;
+	 }
 	
 
 private:

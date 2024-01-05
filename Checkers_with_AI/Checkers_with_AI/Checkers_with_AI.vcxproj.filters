@@ -30,14 +30,11 @@
     <ClCompile Include="BlackChecker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RuleSet.cpp">
+    <ClCompile Include="Coordinate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Table.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Checker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -45,12 +42,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="NoChecker.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WhiteChecker.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BlackChecker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
@@ -71,7 +62,52 @@
     <ClInclude Include="SimpleMoveToEmptyRule.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ContantSet.h">
+    <ClInclude Include="ConstantSet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FundamentalRules.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KingMoveRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveForwardRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RangeTakeRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RightCheckerRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChekerTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TakeBottomLeftCheckerRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TakeBottomRightCheckerRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TakeOppositeCheckerRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TakeRules.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TakeTopLeftCheckerRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TakeTopRightCheckerRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ToBlackCellRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TurnController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WithinTheBoundsRule.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

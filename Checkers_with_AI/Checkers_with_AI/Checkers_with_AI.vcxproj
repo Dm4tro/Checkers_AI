@@ -138,13 +138,13 @@
     <ClCompile Include="WhiteChecker.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BlackChecker.h" />
     <ClInclude Include="Cell.h" />
     <ClInclude Include="Checker.h" />
-    <ClInclude Include="ContantSet.h" />
+    <ClInclude Include="ConstantSet.h" />
     <ClInclude Include="Coordinate.h" />
     <ClInclude Include="FundamentalRules.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="KingMoveRule.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="MoveForwardRule.h" />
     <ClInclude Include="NoChecker.h" />
@@ -162,7 +162,6 @@
     <ClInclude Include="TakeTopRightCheckerRule.h" />
     <ClInclude Include="ToBlackCellRule.h" />
     <ClInclude Include="TurnController.h" />
-    <ClInclude Include="WhiteChecker.h" />
     <ClInclude Include="WithinTheBoundsRule.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

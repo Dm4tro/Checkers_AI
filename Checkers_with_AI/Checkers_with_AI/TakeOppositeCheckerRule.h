@@ -43,13 +43,6 @@ public:
 
 
 
-
-
-
-
-
-
-
 		unsigned short oppositeCollor = theOppositeCheckerColor(move,table);
 		if (oppositeCollor== ConstantSet::COLOR_BLACK)
 		{
@@ -127,7 +120,7 @@ private:
 		list <Coordinate> temp2 = move.getPath();
 		const Cell temp1 = table.getACell( temp2.front().getY(), temp2.front().getX());
 
-		if (temp1.isWhiteChecker()) return ConstantSet::COLOR_BLACK;
+		if (temp1.isWhiteChecker()||temp1.isWhiteKing()) return ConstantSet::COLOR_BLACK;
 		else return ConstantSet::COLOR_WHITE;
 
 	}

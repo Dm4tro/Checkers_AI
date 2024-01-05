@@ -12,14 +12,14 @@ public:
 		if (oppositeCheckerColor == ConstantSet::COLOR_BLACK)
 		{
 			if (coordinate1.getX() + 2 == coordinate2.getX() && coordinate1.getY() + 2 == coordinate2.getY()
-				&& table.getACell(coordinate2.getY() - 1, coordinate2.getX() - 1).isBlackChecker()) return true;
+				&& table.getACell(coordinate2.getY() - 1, coordinate2.getX() - 1).isBlackChecker()|| table.getACell(coordinate2.getY() - 1, coordinate2.getX() - 1).isBlackKing()) return true;
 			else return false;
 		}
 
 		else
 		{
 			if (coordinate1.getX() + 2 == coordinate2.getX() && coordinate1.getY() + 2 == coordinate2.getY()
-				&& table.getACell( coordinate2.getY() - 1 , coordinate2.getX()  - 1).isWhiteChecker()) return true;
+				&& table.getACell( coordinate2.getY() - 1 , coordinate2.getX()  - 1).isWhiteChecker()|| table.getACell(coordinate2.getY() - 1, coordinate2.getX() - 1).isWhiteKing()) return true;
 			else return false;
 		}
 	}

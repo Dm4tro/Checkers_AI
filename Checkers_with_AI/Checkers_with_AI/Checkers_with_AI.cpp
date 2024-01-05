@@ -16,6 +16,9 @@ int main()
     return 0;
     
 }
+//nomoves
+//fix taking pawn behind, only forward
+
 //FIX 4 parameter input in take rules
 
 //fix only forward

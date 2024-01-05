@@ -1,9 +1,9 @@
 #pragma once
 
 #include "Cell.h"
-#include "ContantSet.h"
+#include "ConstantSet.h"
 #include "Coordinate.h"
-#include "ContantSet.h"
+#include "ConstantSet.h"
 #include <ios>
 #include <iomanip>
 class ChekerTable
@@ -76,7 +76,9 @@ public:
 		}
 		
 		Coordinate second=*it;
-		
+
+		Cell temporary1 = getACell(first.getY(), first.getX());
+
 		if (first.getY() + 2 == second.getY() || first.getY() - 2 == second.getY())
 		{
 			doTakeMove(move);
@@ -85,7 +87,15 @@ public:
 		else {
 			doSimpleMove(move);
 		}
+
+		
+
+		if (pathCur.back().getY() == 8 || pathCur.back().getY() == 1 && !temporary1.isKing())
+		{
+			promoteToKing(pathCur.back().getY(), pathCur.back().getX());
+		}
 	}
+
 
 	void doTakeMove(Move move) {
 		list <Coordinate> temp = move.getPath();
@@ -135,6 +145,13 @@ public:
 		
 		cellArray[8 - y][x-1 ].removeChecker();
 
+	}
+
+	void promoteToKing(int y, int x) {
+		Cell toPromote = getACell(y, x);
+		if (toPromote.isBlackChecker())
+			toPromote.setToBlackKing();
+		else toPromote.setToWhiteKing();
 	}
 	 
 	
@@ -205,7 +222,7 @@ public:
 			{//test different symbols
 				
 				if (cellArray[i][j].getSymbol() == 0 && cellArray[i][j].getColor() == ConstantSet::COLOR_WHITE) {
-					cout << "W ";
+					cout << "w ";
 				}
 				else if(cellArray[i][j].getSymbol() == 0 && cellArray[i][j].getColor() == ConstantSet::COLOR_BLACK){
 					cout << "B ";
@@ -217,6 +234,14 @@ public:
 				else  if (cellArray[i][j].getSymbol() == ConstantSet::COLOR_BLACK)
 				{
 					cout << "- ";
+				}
+				else  if (cellArray[i][j].getSymbol() == ConstantSet::COLOR_BLACK_KING)
+				{
+					cout << "/ ";
+				}
+				else  if (cellArray[i][j].getSymbol() == ConstantSet::COLOR_WHITE_KING)
+				{
+					cout << "* ";
 				}
 				
 			}
