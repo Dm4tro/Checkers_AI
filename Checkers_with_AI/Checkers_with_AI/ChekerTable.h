@@ -67,15 +67,74 @@ public:
 	}*/
 
 	void doMove(Move move) {
-		//send checker to Cell and the Cell should recieve checker and replatece, while the first Cell should have NOCHECKER
-		cellArray[To.getX() - 1][To.getY() - 8].recieve(cellArray[From.getX() - 1][From.getY() - 8].send());
-		cellArray[From.getX() - 1][From.getY() - 8].removeChecker();
+		list <Coordinate> pathCur = move.getPath();
+		auto it = pathCur.begin();
+		Coordinate first = *it;
+		if (it!=pathCur.end())
+		{
+			it++;
+		}
+		
+		Coordinate second=*it;
+		
+		if (first.getY() + 2 == second.getY() || first.getY() - 2 == second.getY())
+		{
+			doTakeMove(move);
+			
+		}
+		else {
+			doSimpleMove(move);
+		}
+	}
+
+	void doTakeMove(Move move) {
+		list <Coordinate> temp = move.getPath();
+		auto it = temp.begin();
+		Coordinate& coordinate1 = *it;
+		if (it != temp.end()) {
+			++it;
+		}
+
+		for (; it != temp.end(); ++it) {
+			Coordinate& coordinate2 = *it;
+			Cell temporary1 = getACell(coordinate1.getY(), coordinate1.getX());
+			Cell temporary2 = getACell(coordinate2.getY(), coordinate2.getX());
+
+			temporary2.recieve(temporary1.send());
+			temporary1.removeChecker();
+			cellArray[8 - temp.front().getY()][temp.front().getX() - 1] = temporary1;
+			cellArray[8 - temp.back().getY()][temp.back().getX() - 1] = temporary2;
+
+			int checkerToDeleteXPos = (temporary1.getX() + temporary2.getX()) / 2;
+			int checkerToDeleteYPos = (temporary1.getY() + temporary2.getY()) / 2;
+			removeTakenChecker(checkerToDeleteYPos, checkerToDeleteXPos);
+			coordinate1 = *it;
+		}
+	}
+
+	void doSimpleMove(Move move) {
+		list <Coordinate> temp = move.getPath();
+
+		Cell cell1 = getACell(temp.front().getY(), temp.front().getX());
+		Cell cell2 = getACell(temp.back().getY(), temp.back().getX());
+
+		cell2.recieve(cell1.send());
+		cell1.removeChecker();
+		cellArray[8 - temp.front().getY()][temp.front().getX() - 1] = cell1;
+		cellArray[8 - temp.back().getY()][temp.back().getX() - 1] = cell2;
 
 	}
 
-	void removeTakenChecker(int x, int y) {
+
+
+	void removeTakenChecker(int y, int x) {
 		//add how to calculate it also
-		cellArray[x - 1][y - 8].removeChecker();
+		if (cellArray[8 - y][x-1].isWhite()) removeOneFromWhiteCheckerCounter();
+		else removeOneFromBlackCheckerCounter();
+		
+		
+		cellArray[8 - y][x-1 ].removeChecker();
+
 	}
 	 
 	
@@ -141,7 +200,7 @@ public:
 
 		for (int i = 0; i < 8; i++)
 		{
-			cout << i + 1 << setw(6);
+			cout << 8-i << setw(6);
 			for (int j = 0; j < 8; j++)
 			{//test different symbols
 				
@@ -175,11 +234,8 @@ public:
 		
 	}
 
-
-
-
 	const Cell getACell(int y, int x) const  {
-		return cellArray[y][x];
+		return cellArray[8-y][x-1];
 	}
 
 	void removeOneFromWhiteCheckerCounter() {
@@ -187,6 +243,14 @@ public:
 	}
 	void removeOneFromBlackCheckerCounter() {
 		amountOfBlackCheckers -= 1;
+	}
+
+	bool isWhiteAWinner() {
+		return amountOfBlackCheckers == 0;
+	}
+
+	bool isBlackAWinner() {
+		return amountOfWhiteCheckers == 0;
 	}
 private:
 	unsigned short amountOfWhiteCheckers ;

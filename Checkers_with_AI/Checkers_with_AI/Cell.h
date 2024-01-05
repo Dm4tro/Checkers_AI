@@ -103,7 +103,8 @@ public:
 		return checker.getSymbol() == 0;
 	}
 	void recieve(Checker recieved) {
-		checker = recieved;
+
+		checker.setSymbol(recieved.getSymbol());
 	}
 
 	Checker send() {

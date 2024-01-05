@@ -20,19 +20,22 @@ public:
 	friend istream& operator>>(istream& in, Move& c)
 	{
 		cout << "Input: ";
-		char checkInput;
-		while ( (checkInput =in.peek()) != '\n')
+		char checkInput=' ';
+		while ( checkInput  != '\n')
 		{
 			in >> c.temporaray;
 			c.path.push_back(c.temporaray);
 			char arrow = in.get();
-
+			//2:6<1:5
 			if (arrow == '<')
 				continue;
-			else {
-				cout << "Error, '<' is missing!";
+			else if (arrow == '\n') {
 				break;
+			}else {
+				cout << "Error, '<' is missing!";
+				exit(-1);
 			}
+			checkInput = in.peek();
 		}
 		//cout << "1 Input ";peek provirjaty
 			//in >> c.From ;
@@ -56,25 +59,36 @@ public:
 	void coutFront() {
 		cout << path.front().getY() <<" " << path.front().getX();
 	}
-	const list<Coordinate>& getPathFromSecond() const {
+	list<Coordinate> getPathFromSecond() const {
+		std::list<Coordinate> pathFromSecond;
+
 		auto it = path.begin();
 		if (it != path.end()) {
-			++it; 
+			++it;
+		}
+		else {
+			std::cout << "getPathFromSecond ERROR";
 		}
 
-		
-		return list<Coordinate>(it, path.end());
+		pathFromSecond.insert(pathFromSecond.end(), it, path.end());
+		return pathFromSecond;
 	}
 
 	const list<Coordinate>& getPath() const {
 		return path;
 	}
+		
+	size_t getPathSize() {
+		return path.size();
+	}
+
 	unsigned short getCheckerColor() {
 		return checkerColor;
 	}
 
 private:
 	list <Coordinate> path;
+	/*list <Coordinate> pathFromSecond;*/
 	Coordinate temporaray;
 	unsigned short checkerColor;
 

@@ -16,8 +16,8 @@ public:
 	}
 	bool validate(const Move& move, const ChekerTable& table) {
 		
-		return simpleMoveToEmptyRule.validate(move, table) && toEmptyBlackCellRule.validate(move, table)&&
-			withinTheBoundsRule.validate(move, table)&&rightCheckerRule.validate(move, table);
+		return withinTheBoundsRule.validate(move, table)  && toEmptyBlackCellRule.validate(move, table)&&
+			simpleMoveToEmptyRule.validate(move, table) && rightCheckerRule.validate(move, table);
 	}
 private:
 	SimpleMoveToEmptyRule simpleMoveToEmptyRule;

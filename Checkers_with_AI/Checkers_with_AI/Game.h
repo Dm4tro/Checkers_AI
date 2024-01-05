@@ -26,15 +26,35 @@ public:
         {
             turnController.setTurnWhite();
             //readMove();
-            Move move = Move(turnController.getCurrentTurnCheckerColor());
-            cin >> move;
+            Move moveWhite = Move(turnController.getCurrentTurnCheckerColor());
+            cout << "White ";
+            cin >> moveWhite;
             
 
-            compositeRule.validate(move, checkerTable);
-            checkerTable.doMove(move);
-
+            if (!compositeRule.validate(moveWhite, checkerTable)) {
+                cout << "Validate error";
+                exit(-1);
+            }
+            checkerTable.doMove(moveWhite);
+            checkerTable.showTable();
+           
+            if (checkerTable.isWhiteAWinner()) break;
 
             turnController.setTurnBlack();
+            Move moveBlack = Move(turnController.getCurrentTurnCheckerColor());
+            cout << "Black ";
+            cin >> moveBlack;
+
+
+            if (!compositeRule.validate(moveBlack, checkerTable)) {
+                cout << "Validate error";
+                exit(-1);
+            }
+            checkerTable.doMove(moveBlack);
+            checkerTable.showTable();
+           
+            if (checkerTable.isBlackAWinner()) break;
+            
         }
        
         // Uncomment the lines below once the functions are defined

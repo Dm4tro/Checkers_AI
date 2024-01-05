@@ -2,24 +2,19 @@
 //
 
 #include <iostream>
-#include "Move.h"
-#include "ChekerTable.h"
+//#include "Move.h"
+//#include "ChekerTable.h"
+#include "Game.h"
 
 using namespace std;
 
 int main()
 {
-    
-    
+    Game game;
+    game.run();
 
-    ChekerTable table1;
-    table1.initializeGame();
-    table1.showTable();
-    cout << endl;
-    Move move;
-    cin >> move;
-    cout << endl;
-    move.coutFront();
+    return 0;
+    
 }
 //FIX 4 parameter input in take rules
 

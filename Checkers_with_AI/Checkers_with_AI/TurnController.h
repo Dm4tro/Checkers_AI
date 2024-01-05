@@ -5,7 +5,7 @@ class TurnController
 {
 public:
 
-	TurnController() {
+	TurnController() : chckerTurn{100} {
 
 	}
 
@@ -15,7 +15,7 @@ public:
 	}
 
 	void setTurnBlack() {
-		chckerTurn == ConstantSet::COLOR_BLACK;
+		chckerTurn = ConstantSet::COLOR_BLACK;
 	}
 
 	unsigned short getCurrentTurnCheckerColor() {

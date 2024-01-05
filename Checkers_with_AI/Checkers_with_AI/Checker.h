@@ -5,13 +5,13 @@
 class Checker
 {
 public:
-	Checker():color{ (unsigned short)0 } { }
+	Checker():color{ (unsigned short)0 }, x { -1 }, y{ -1 } { }
 
 	Checker(int posX, int posY, unsigned short _symbol) : x{ posX }, y{ posY }, color{ _symbol } {
 		
 	}
 
-	Checker(unsigned short _symbol): color{ _symbol } {
+	Checker(unsigned short _symbol) : color{ _symbol }, x{ -1 }, y{-1} {
 
 	}
 

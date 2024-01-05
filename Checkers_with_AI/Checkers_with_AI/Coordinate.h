@@ -19,6 +19,7 @@ public:
 		y = 0;
 		x = 0;
 	}
+
 	Coordinate(const Coordinate& rhs) {
 		this->y = rhs.y;
 		this->x = rhs.x;

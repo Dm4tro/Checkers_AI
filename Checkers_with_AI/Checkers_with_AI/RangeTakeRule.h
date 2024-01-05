@@ -26,7 +26,7 @@ public:
 
         for (; it != temp.end(); ++it) {
             const Coordinate& coordinate1 = *it;
-            if (coordinate1.getY() + 2 != temp1 || coordinate1.getY() - 2 != temp1) {
+            if (coordinate1.getY() + 2 != temp1 && coordinate1.getY() - 2 != temp1) {
                 return false;
             }
 			temp1 = coordinate1.getY();

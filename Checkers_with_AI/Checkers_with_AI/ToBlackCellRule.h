@@ -16,7 +16,7 @@ public:
 		for (const Coordinate& coordianate : temp) {
 			/*coordianate.getX();
 			coordianate.getY();*/
-			const Cell temp1 = table.getACell(coordianate.getY()-8,coordianate.getX()-1);
+			const Cell temp1 = table.getACell(coordianate.getY(),coordianate.getX());
 			if (!temp1.isBlack())
 			{
 				return false;
